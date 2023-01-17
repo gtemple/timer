@@ -1,7 +1,7 @@
 const input = process.argv.slice(2);
 
 const timer = (args) => {
-  const converted = args.map(x => Number(x))
+  const converted = args.map(x => Number(x));
   for (let time of converted) {
 
     if (time < 0 || typeof time !== 'number') continue;
