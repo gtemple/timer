@@ -1,7 +1,9 @@
-const timer = (...args) => {
-  const times = args.sort(); //not entirely necessary but this would ensure that the seconds are as exact as possible within the stack
+const input = process.argv.slice(2);
 
-  for (let time of times) {
+const timer = (args) => {
+  const converted = args.map(x => Number(x))
+  for (let time of converted) {
+
     if (time < 0 || typeof time !== 'number') continue;
     
     let seconds = time * 1000;
@@ -12,9 +14,13 @@ const timer = (...args) => {
   }
 };
 
+timer(input);
 
-timer(4, 3, 1, 8, 9);
+// timer(4, 3, 1, 8, 9);
 
-timer(4, 'apple', 1, false, 9);
+// timer(4, 'apple', 1, false, 9);
 
-timer(4, 3, 1, -7, 9);
+// timer(4, 3, 1, -7, 9);
+
+
+
